@@ -1,0 +1,63 @@
+@import "blueprint/grid";
+@import "compass/css3";
+@import "compass/utilities/general";
+@import "blueprint/typography";
+@import "blueprint/reset";
+
+html {
+  @include blueprint-typography;
+  background: url(/images/me.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
+  body {
+    margin: 0;
+    padding: 0;
+  }
+  .stage {
+    @include container;
+    position: relative;
+    margin-top: 30px;
+    .content {
+      @include min-height(500px);
+      position: relative;
+      color: #FFF;
+      z-index: 2;
+      margin: 50px 15px;
+      h1 {
+        color: #FFF;
+      }
+      p {
+        font-size: 1.5em;
+      }
+      a {
+        &:link, &:active, &:visited {
+          color: #F09;
+          text-decoration: none;
+        }
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+      ul {
+        margin-top: 50px;
+        list-style: none;
+        font-size: 2em;
+        padding: 0;
+      }
+    }
+    .shield {
+      @include opacity(0.9);
+      @include min-height(100%);
+      background-color: #333;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 1;
+    }
+  }
+}
